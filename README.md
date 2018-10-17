@@ -10,8 +10,8 @@ https://bbs.meizu.cn/
 * run_all_test: 执行测试用例入口，用来运行所有的测试用例。 
 
 ### test_case目录
-* models: 该目录下封装了一些公共的配置信息。比如浏览器驱动__driver.py__，
-  继承单元框架的__myunit.py__。
+* models: 该目录下封装了一些公共的配置信息。比如浏览器驱动__ driver.py __，
+  继承单元框架的__ myunit.py __。
 * page_obj ，该目录放是所有页面有的page 对象，实其就是元素的定位。它里面的文件与
   测试用例文件一一对应。
 * *_sta.py，所有_sta.py结尾的文件，就是测试用例文件。

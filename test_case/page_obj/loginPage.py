@@ -63,6 +63,93 @@ class Login(Page):
         return self.find_element(*self.user_login_success_loc).text
 
 
+class MyDynamic(Page):
+    """
+    用户中心--我的动态
+    """
+    my_username_loc = (By.ID, "mzCustName")
+    my_account_loc = (By.CLASS_NAME, "actmanage_mzcust")
+    my_dynamic_loc = (By.LINK_TEXT, "我的动态")
+    my_invitation_loc = (By.LINK_TEXT, "我的帖子")
+
+    # 我的账号
+    def my_account(self):
+        above = self.find_element(*self.my_username_loc)
+        ActionChains(self.driver).move_to_element(above).perform()
+        sleep(1)
+        self.find_element(*self.my_account_loc).click()
+
+    url = "/home.php?mod=follow"   # 我的动态链接
+
+    def open(self):
+        self._open(self.url)
+
+    # 我的动态
+    def my_dynamic(self):
+        self.open()
+
+
+class MyInvitation(Page):
+    """
+    用户中心--我的帖子
+    """
+    url = "/forum.php?mod=guide&view=my"   # 我的帖子
+
+    def open(self):
+        self._open(self.url)
+
+    # 我的帖子
+    def my_invitation(self):
+        self.open()
+
+
+class MyFriend(Page):
+    """
+    用户中心--我的好友
+    """
+    url = "/home.php?mod=space&do=friend"  # 我的好友
+
+    def open(self):
+        self._open(self.url)
+
+    # 我的好友
+    def my_friend(self):
+        self.open()
+
+
+class MySetting(Page):
+    """
+    用户中心--我的设置
+    """
+
+    url = "/home.php?mod=spacecp&ac=profile&op=base"   # 我的设置
+
+    def open(self):
+        self._open(self.url)
+
+    # 我的好友
+    def my_setting(self):
+        self.open()
+
+
+class MyVest(Page):
+    """
+    用户中心--我的马甲
+    """
+
+    url = "/home.php?mod=spacecp&ac=plugin&id=myrepeats:memcp"   # 我的马甲
+
+    def open(self):
+        self._open(self.url)
+
+    # 我的马甲
+    def my_vest(self):
+        self.open()
+
+if __name__ == '__main__':
+    pass
+
+
 
 
 
